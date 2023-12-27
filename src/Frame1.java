@@ -14,6 +14,8 @@ public class Frame1 extends javax.swing.JFrame {
      */
     public Frame1() {
         initComponents();
+        //Dzakwan : "bikin di awal muncul di tengah."
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -25,27 +27,32 @@ public class Frame1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        button1 = new java.awt.Button();
-        button2 = new java.awt.Button();
+        BungkusButton = new java.awt.Button();
+        DineInButton = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        button1.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
-        button1.setForeground(new java.awt.Color(51, 51, 51));
-        button1.setLabel("Bungkus");
-        button1.addActionListener(new java.awt.event.ActionListener() {
+        BungkusButton.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
+        BungkusButton.setForeground(new java.awt.Color(51, 51, 51));
+        BungkusButton.setLabel("Bungkus");
+        BungkusButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
+                BungkusButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 550, 130, 30));
+        getContentPane().add(BungkusButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 550, 130, 30));
 
-        button2.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
-        button2.setForeground(new java.awt.Color(51, 51, 51));
-        button2.setLabel("Dine In");
-        getContentPane().add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 110, 30));
+        DineInButton.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
+        DineInButton.setForeground(new java.awt.Color(51, 51, 51));
+        DineInButton.setLabel("Dine In");
+        DineInButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DineInButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DineInButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 110, 30));
 
         jLabel1.setBackground(null);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projecctuasdpa/MenuUtamaPadangResto.jpg"))); // NOI18N
@@ -54,9 +61,27 @@ public class Frame1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button1ActionPerformed
+    private void BungkusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BungkusButtonActionPerformed
+       
+        //Button Bungkus pindah frame + simpan var bungkus
+        int MakanDmn = 2;
+        
+        FrameDineIn fdi = new FrameDineIn(MakanDmn);
+        fdi.setLocationRelativeTo(null);
+        fdi.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BungkusButtonActionPerformed
+
+    private void DineInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DineInButtonActionPerformed
+       
+        //Button Dine In pindah frame + simpan var Dine In
+        int MakanDmn = 1;
+        
+        FrameDineIn fdi = new FrameDineIn(MakanDmn);
+        fdi.setLocationRelativeTo(null);
+        fdi.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_DineInButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,14 +113,16 @@ public class Frame1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new Frame1().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button1;
-    private java.awt.Button button2;
+    private java.awt.Button BungkusButton;
+    private java.awt.Button DineInButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
